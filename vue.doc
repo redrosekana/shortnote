@@ -1,0 +1,16 @@
+####### vue js #######
+
+คำสั่งติดตั้ง vue (-g ติดตั้งแบบ global)
+- npm install -g @vue/cli
+
+คำสั่งสร้าง app (-d default หากไม่ใส่จะมีคำถามพร้อมตัวเลือกเพื่อนำไปใช้งาน)
+- vue create [-d] <ชื่อแอพ>
+
+คำสั่งรัน app
+- npm run serve
+
+
+### module น่าสนใจของ vue js ###
+
+package จัดการ router สำหรับของ vue js
+- npm add @vue/router

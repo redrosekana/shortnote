@@ -1,0 +1,16 @@
+####### react #######
+
+คำสั่งติดตั้ง (-g ติดตั้งแบบ global)
+- npm install -g create-react-app
+
+คำสั่งสร้าง app
+- create-react-app <ชื่อแอพ>
+
+คำสั่งรัน app
+- npm start
+
+คำสั่ง build project โปรเจคเอาไปใช้ในระดับ production
+- npm run build
+
+คำสั่งเช็ค version ของ react
+- npm view react version

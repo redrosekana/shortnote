@@ -1,0 +1,166 @@
+####### react #######
+
+(git init)
+คำสั่งสำหรับสร้าง Git Repository ให้กับโปรเจ็คของเรา
+- git init
+
+
+(git clone)
+คำสั่งดึงข้อมูลจาก Repository จากเครื่องอื่น
+- git clone <url>
+
+
+(git config)
+คำสั่งการตั้งค่า Git โดยใส่ชื่อและอีเมล์
+- git config --global user.name "your_name"
+- git config --global user.email "your@email.com"
+
+คำสั่งแสดงสถานะการตั้งค่า
+- git config --list // แสดงเฉพาะ Repository นี้
+- git config --global --list // แสดงทั้งหมด
+
+คำสั่งเพื่อบันทึกเปลี่ยนสถานะ (Stage) รอการ Commit
+- git add <file_name> ระบุไฟล์ เช่น git add index.html product.html
+- git add . เลือกทุกไฟล์ที่อยู่ใน Directory ปัจจุบัน
+- git add *.html  เลือกหลายไฟล์ระบุนามสกุล
+
+
+(git commit)
+คำสั่งเพื่อบันทึกไฟล์ทั้งหมด โดยต้อง Commit ไปที่ Repository ภายในเครื่องของเรา (Local)
+ส่วน -m เป็น option "เพื่อใส่ข้อความว่าเราได้ทำอะไรไปบ้างในโปจเคนั้น"
+- git commit -m "comment"
+
+รวมทั้ง add และ commit ในคราวเดียวกันก็ใช้ -am
+- git commit -am "comment"
+
+กรณีที่ commit ไปแล้ว แต่ลืมและมีแก้อะไรเล็กน้อย ทำให้ต้อง commit เพิ่มเติมเข้าไป กลายเป็นว่า commit สิ่งที่เหมือนกันเข้าไปซ้ำๆ 
+"ทำให้ Commit เยอะมาก" ให้แก้ไขโดยเพิ่ม –amend เข้าไปด้วย เพื่อที่มันจะได้รวบเป็น commit เดียวกัน
+- git commit -m --amend "comment"
+- git commit -am --amend "comment"
+
+
+(git push)
+คำสั่งเพื่อส่งไฟล์ขึ้นไปที่ Repository บน Git (Remote)
+ตัวอย่างเช่น git push -u origin master
+- git push <remote_name> <branch_name> 
+
+push สำหรับ commit ที่ย้อนไปแล้วต้องการจะ push
+- git push  -f <remote_name> <branch_name> 
+
+เพื่อลบ Branch บน Repository บน Git (Remote)
+- git push origin --delete <branch_name>
+
+
+(git reset)
+คำสั่งยกเลิกเมื่อเราสั่ง git add ไปแล้ว 
+- git reset <file_name>
+
+คำสั่งยกเลิกเมื่อเราสั่ง git commit แล้วบน (Local)
+–hard คือ จะลบสิ่งที่เคย commit ออกไปเลย กลับไปยัง commit ก่อนหน้า
+- git reset --hard HEAD~1
+
+–soft คือ จะนำสิ่งที่เคย commit กลับมายังสถานะ staged เหมือนก่อน commit แต่ add ไปหมดแล้ว
+- git soft --hard HEAD~1
+
+
+(git status)
+คำสั่งเพื่อดูสถานะการเปลี่ยนแปลงของ Repository บนเครื่องเรา (Local)
+- git status
+
+
+(git diff)
+คำสั่งใช้สำหรับดูว่า Code มีอะไรเปลี่ยนแปลงและแตกต่างอะไรไปบ้างเช่น มี เพิ่ม ลบ แก้ไข อะไร โดยเทียบกับ Commit ที่ผ่านมา
+- git diff // เฉพาะ Branch หรือ Commit ID ที่เราใช้อยู่ ณ ขณะนี้
+- git diff <commit_id> // แบบระบุ Commit ID 
+- git diff <commit_id> <commit_id> // เปรียบเทียบระหว่างสอง Commit
+
+
+(git log)
+คำสั่งใช้ดูประวัติการ commit ต่างๆ ของRepo โดยจะแสดง เลขcommit, commit message, ชื่อผู้เขียน, email, และเวลาที่ commit นั้นๆ
+- git log
+- git log --oneline // แสดงแต่ละlog เหลือบรรทัดเดียว
+
+
+(git fetch)
+คำสั่งเพื่อใช้ดึงความเปลี่ยนแปลงจาก Remote Repository มายัง Local Repository มายัง
+- git fetch
+
+
+(git pull)
+คำสั่งดึงไฟล์ หรืออัพเดท Source Code ภายในเครื่อง (Local) ให้ตรงกับ Repository (Remote) โดยคำสั่ง git pull นั้นจะทำการ git fetch และ git merge ไปด้วย
+- git pull <remote_name> <branch_name> // ตัวอย่าง git pull origin master
+
+
+(git branch)
+Branch มีเพื่อเราจะได้แยกการพัฒนาออกจาก Branch หลัก โดย Branch เริ่มต้นจะชื่อว่า Master 
+จากนั้นเมื่อพัฒนาเสร็จเราจึงทำการ Merge กลับมายัง Master อีกครั้ง
+
+คำสั่งสร้าง Branch
+- git branch <branch_name>
+
+คำสั่งดูรายชื่อ branch ทั้งหมด
+- git branch
+
+ลบ Branch (Local)
+- git branch -d <branch_name>
+
+
+(git checkout)
+ออกจาก Branch ปัจจุบัน ไปยัง Branch ที่มีอยู่แล้ว
+- git checkout <branch_name>
+
+ออกจาก Branch ปัจจุบัน ไปยัง Branch ที่ไม่มี นั่นคือ ทำการสร้าง Branch ใหม่และสลับไป Branch นั้นทันที
+- git checkout -b <branch_name>
+
+เปลี่ยนไปยัง Branch ที่ไม่มี นั่นคือทำการสร้าง Branch ใหม่และสลับไป Branch นั้นทันที โดยอ้างอิง Commit ID (บางครั้งเราอาจจะต้องย้อนกลับไปยัง Code ชุดเก่า)
+- git checkout -b <branch_name> <commit_id>
+
+คำสั่งย้อนกลับไปยัง Commit ล่าสุด หรือยกเลิกการแก้ไขไฟล์
+- git checkout — <file_name>
+
+
+(git merge)
+คำสั่งการรวม Branch มายัง Local โดยต้องย้ายมายัง branch default ก่อน
+- git merge <branch_name>
+<branch_name> คือ branch ที่ต้องการรวม
+
+
+(git remote)
+แสดงข้อมูล URL ของ Repository (Remote)
+- git remote -v
+
+เพิ่ม URL ของ Repository (Remote)
+- git remote add origin <remote_url>
+
+เปลี่ยน URL ของ Repository (Remote)
+- git remote set-url origin <remote_url>
+
+ตั้งชื่อ Remote ใหม่ (เช่น เปลี่ยนจาก origin ไปเป็น destination จะใช้ git remote rename origin destination)
+- git remote rename <old_name> <new_name>
+
+ลบ Remote
+- git remote rm <remote_name>
+
+
+(git tag)
+แสดง Tag ทั้งหมด
+- git tag
+
+
+(git clean)
+แสดงไฟล์ที่อยู่ในสถานะ Untracked
+- git clean -n
+ลบไฟล์ที่อยู่ในสถานะ Untracked
+- git clean -df
+
+
+(git version)
+สำหรับแสดง Version ของ Git
+- git version
+
+
+วิธีการลบ branch ใน remote
+- git push <ชื่อremote> --delete <ชื่อ branch ใน remote>
+
+ดูข้อมูล branch ทั้ง local และ remote
+-git branch -a 

@@ -1,0 +1,60 @@
+####### python #######
+
+ดู version pip
+- C:\Python310\Scripts\pip.exe -V
+- pip -V
+
+ดู version python 
+- python -V
+- C:\Python310\python.exe -V
+
+ดู package ว่ามีอะไรบ้าง
+- pip list
+
+การติดตั้ง package ต่างๆ
+- pip install [package]
+กรณีอยากติดตั้งไว้ในคนละ version python
+- C:\Python310\python.exe -m pip install [package]
+
+การอัพเกรด package 
+- python -m pip install --upgrade ชื่อโมดูล
+
+
+####### virtualenv #######
+
+สร้าง virtualenv
+- python -m virtualenv [ชื่อ virtualenv]
+
+เข้ามาใน virtualenv
+- .\[ชื่อ virtualenv]\scripts\activate ถ้าใน powershell ต้อง .ps1 ต่อท้ายด้วย
+
+ออกจาก virtualenv
+- deactivate
+ภายใน virtualenv มี package อะไรอยู่บ้าง
+- pip freeze
+
+รวบรวม library ไว้ในไฟล์ requirement.txt
+- pip freeze > requirement.txt
+
+นำ package ที่ได้จากไป install ที่อื่นต่อ requirement.txt
+- pip install -r <file requirement>
+
+
+
+####### pipenv #######
+สร้าง environment และ activate อัตโนมัต
+- pipenv shell
+
+ติดตั้ง package
+- pipenv install [ชื่อ package]
+
+การดู package และ dependency
+- pipenv graph
+- pipenv lock -r
+
+ออกจาก environment
+- exit
+- deactivate
+
+เข้า environment 
+- C:/Users/User/.virtualenvs/testenv-MprRg-IC/Scripts/Activate.ps1
