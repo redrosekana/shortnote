@@ -1,0 +1,9 @@
+ติดตั้ง project nextjs 
+- npx create-next-app
+
+รันคำสั่งใน producttion
+- npm run dev
+
+รันคำสั่งแบบ deplpoy จริง
+- npm run build
+- npm start
