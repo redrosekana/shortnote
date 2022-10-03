@@ -1,0 +1,8 @@
+ติดตั้ง json-server
+- npm install -g json-server
+
+รัน json-server
+- json-server <ชื่อไฟล์>
+
+รันแบบเปลี่ยน port 
+- json-server -p <port ที่ต้องการ> <ชื่อไฟล์>
