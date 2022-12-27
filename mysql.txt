@@ -1,2 +1,5 @@
 ### database ของคนใจดีไว้ให้เทส relational.fit.cvut.cz
 - mysql -u guest -p -h relational.fit.cvut.cz
+
+### github ฐานข้อมูลไว้ทำการเทสซึ่งคนใจดีสร้างไว้ให้ https://github.com/lerocha/chinook-database/tree/master/ChinookDatabase/DataSources ในที่นี้ลองใช้ Chinook_MySql.sql
+- mysql -u root -p < Chinook_MySql.sql
