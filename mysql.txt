@@ -1,0 +1,2 @@
+### database ของคนใจดีไว้ให้เทส relational.fit.cvut.cz
+- mysql -u guest -p -h relational.fit.cvut.cz
