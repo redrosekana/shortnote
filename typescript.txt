@@ -2,4 +2,4 @@
 - npm install -g typescipt
 
 เช็ค version 
-- typescipt -v
+- tsc -v
