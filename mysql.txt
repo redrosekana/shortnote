@@ -3,3 +3,17 @@
 
 ### github ฐานข้อมูลไว้ทำการเทสซึ่งคนใจดีสร้างไว้ให้ https://github.com/lerocha/chinook-database/tree/master/ChinookDatabase/DataSources ในที่นี้ลองใช้ Chinook_MySql.sql
 - mysql -u root -p < Chinook_MySql.sql
+
+### backup database
+- mysqldump -u root -p -r "world_dump.sql" [ชื่อ database]
+- mysqldump -u root -p [ชื่อ database] > world_dump1.sql
+* -r หมายถึงว่า dump แล้วไปเก็บไว้ที่ไหน ชื่อไฟล์อะไร
+
+### backup database แบบเอาเฉพาะตาราง
+- mysqldump -u root -p -r "world_dump.sql" [ชื่อ database] [ชื่อตาราง1 ชื่อตาราง2 ...]
+mysqldump -u root -p [ชื่อ database] [ชื่อตาราง1 ชื่อตาราง2 ...] > world_dump1.sql
+
+### restore database
+- mysql -u root -p -D [ชื่อ database ที่จะ restore มาเก็บ] -e "source world_dump1.sql"
+- mysql -u root -p -D [ชื่อ database ที่จะ restore มาเก็บ] < world_dump1.sql
+- mysql -u root -p [ชื่อ database ที่จะ restore มาเก็บ] < world_dump1.sql
