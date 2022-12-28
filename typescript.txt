@@ -3,3 +3,9 @@
 
 เช็ค version 
 - tsc -v
+
+สร้าง project typescript กับ nodejs
+- npm init -y
+- tsc --init
+- กำหนดค่าต่างๆใน tsconfig.json
+- npm install typescript ts-node ts-node-dev
